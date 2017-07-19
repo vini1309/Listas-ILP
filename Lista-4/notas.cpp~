@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main () {
+
+	int nalunos, qtdnotas[101], maiores[101], cont=0, maior=0, notax;
+
+	cin >> nalunos;
+
+	for(int i=0; i < nalunos; i++){
+
+		cin >> notax;
+		qtdnotas[notax]++;
+
+	}
+
+	cout << maior << endl;
+
+}

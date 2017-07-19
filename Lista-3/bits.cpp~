@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+int main () {
+
+	int valor=-1, cont=1, n50, n10, n5, n1;
+
+	while(valor !=0){
+	
+		cout << "Teste " << cont << endl;
+		if(valor%50 == 0) {
+			n50 = valor/50;
+			n10 = 0;
+			n5 = 0;
+			n1 = 0;
+		}
+		else if (valor%10 == 0){
+			n50 = valor/50;
+			n10 = valor/10;
+			n5= 0;
+			n1 = 0;		
+		}
+		else if (valor%5 == 0){
+			n50 = valor/50;
+			n10 = valor/10;
+			n5= valor/5;
+			n1 = 0;		
+		}
+		else	n50 = valor/50;
+			n10 = valor/10;
+			n5= valor/5;
+			n1 = valor;		
+		}
+
+	}
+}
+
