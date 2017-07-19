@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+int main () {
+
+	//ndocs= Número de docs encontrados
+	//results= Núemro de resultados por pagina
+	//nOs = Número de O's em "Poodle"
+	//nPs = Número de páginas
+		
+	int ndocs=-1, results=-1, nOs, nPs;
+
+	while (ndocs!=0 || results!=0){
+		
+		cin >> ndocs >> results;
+		if(ndocs==0 && results==0)break;
+
+		if((ndocs%results)==0) nPs = (ndocs/results);
+		else nPs = (ndocs/results) + 1;
+		if(nPs > 20)nPs = 20;	
+
+		if(nPs > 6){
+			nOs = nPs-4;
+			cout << 'P';
+			for (int i=0; i < nOs; i++) cout << 'o';
+			cout << "dle" << endl;
+		}
+		else cout << "Poodle" << endl;	
+
+	}
+}
+

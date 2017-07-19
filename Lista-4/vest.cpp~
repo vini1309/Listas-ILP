@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main (){
+	
+	int n, acertos=0; //número de questões
+	
+	cin >> n;
+						
+	string gabarito; 
+	string marq; //opções marcadas pelo aluno
+
+	cin.ignore();
+	getline(cin,gabarito);
+	getline(cin,marq);
+
+	for (int i=0; i<=n; i++){
+		if(marq[i]==gabarito[i]) acertos++;
+	}  
+
+	cout << acertos-1 << endl;		
+
+}
