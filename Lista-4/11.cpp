@@ -12,26 +12,14 @@ int main () {
 		somaOrdemImpar=0;
 
 		getline(cin, numero);
-		
-		int algarismo[numero.size()];
+		if (numero == "0") break;
 
 		for (int i=0; i<numero.size(); i++){
-			
-			switch (numero[i]){
-				case '0': algarismo[i]=0; break; 
-				case '1': algarismo[i]=1; break;
-				case '2': algarismo[i]=2; break;
-				case '3': algarismo[i]=3; break;
-				case '4': algarismo[i]=4; break;
-				case '5': algarismo[i]=5; break;
-				case '6': algarismo[i]=6; break;
-				case '7': algarismo[i]=7; break;
-				case '8': algarismo[i]=8; break;
-				case '9': algarismo[i]=9; break;
-			}
+		
+			int n = numero[i] - '0';
 
-			if (i % 2 == 0) somaOrdemImpar += algarismo[i];
-			else somaOrdemPar += algarismo[i];
+			if (i % 2 == 0) somaOrdemImpar += n;
+			else somaOrdemPar += n;
 
 
 			/*Aqui chamei de ordem ímpar a posição que é divisível por 2 e não
@@ -40,9 +28,8 @@ int main () {
 			correspondem à uma posição ímpar dos algarismos.*/
 	
 		}
-			
-		if (numero == "0") break;
-		else if ((somaOrdemPar-somaOrdemImpar) % 11 == 0) 
+				
+		if ((somaOrdemPar-somaOrdemImpar) % 11 == 0) 
 			cout << numero << " is a multiple of 11." << endl;
 		else cout << numero << " is not a multiple of 11." << endl;
 
