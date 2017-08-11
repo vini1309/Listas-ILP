@@ -1,6 +1,2 @@
-5
-.ooo.
-..ooA
-..Aoo
-Aoooo
-..ooo 
+8
+5 7 1 2 3 4 5 6

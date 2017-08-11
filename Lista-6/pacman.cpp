@@ -3,7 +3,7 @@
 using namespace std;
 int main (){
 
-	int dim;
+	int dim, cont=0, max=0;
 	cin >> dim;
 	string tab[dim];
 	cin.ignore();
@@ -15,12 +15,28 @@ int main (){
 	for (int i = 0; i < dim; i++){
 		if (i%2 == 0)
 		for (int j = 0; j < dim; j++){
-			if tab[j]
+			if(tab[i][j] == 'o'){
+				cont++;
+			}
+			else if(tab[i][j] == 'A'){
+				cont = 0;
+			}
+
+			if(cont > max) max = cont;
 		}
 
 		else
 		for (int j = (dim-1); j >= 0; j--){
-			cout << tab[i][j] << endl;
+			if(tab[i][j] == 'o'){
+				cont++;
+			}
+			else if(tab[i][j] == 'A'){
+				cont = 0;
+			}
+
+			if(cont > max) max = cont;
 		}	
 	}
+
+	cout << max << endl;
 }
