@@ -3,70 +3,69 @@ using namespace std;
 int main (){
 
 	//n = number of movements
-	int n, xpos, ypos, count;
+	int n, linha, coluna, count, mov;
 	cin >> n;
-	int mov[n], tab[8][8];
+	int tab[8][8];
 
 	//0 = normal square, 1 = broken square
-	for (int i = 0; i < 8; ++i)	{
+	for (int i = 0; i < 8; i++)	{
 		for (int j = 0; j < 8; j++)	{
 			tab[i][j] = 0;
 		}
 	}
 
-	tab[1][3] = 1; tab[2][3] = 1; tab[2][5] = 1; tab[5][4] = 1; 
-	ypos = 3;
-	xpos = 4;
+	tab[2][2] = 1;tab[4][1] = 1; tab[4][2] = 1; tab[3][5] = 1; 
+	linha = 4;
+	coluna = 4;
 
 	for (int i = 0; i < n; i++){
-		cin >> mov[i];
-	}
+		
+		cin >> mov;
 
-	for (int i = 0; i < n; i++){
-		switch(mov[i]){
+		switch(mov){
 			case 1:
-			xpos += +1;
-			ypos += +2;
+			linha -= 2;
+			coluna += 1;
 			break;
 
 			case 2:
-			xpos += +2;
-			ypos += +1;
+			linha -= 1;
+			coluna += 2;
 			break;
 
 			case 3:
-			xpos += +2;
-			ypos += -1;
+			linha += 1;
+			coluna += 2;
 			break;
 
 			case 4:
-			xpos += +1;
-			ypos += -2; 
+			linha += 2;
+			coluna += 1; 
 			break;
 
 			case 5:
-			xpos += -1;
-			ypos += -2;
+			linha += 2;
+			coluna -= 1;
 			break;
 
 			case 6:
-			xpos += -2;
-			ypos += -1;
+			linha += 1;
+			coluna -= 2;
 			break;
 
 			case 7:
-			xpos += -2;
-			ypos += +1;
+			linha -= 1;
+			coluna -= 2;
 			break;
 
 			case 8:
-			xpos += -1;
-			ypos += +2;
+			linha -= 2;
+			coluna -= 1;
 			break;
 
 		}
 		
-		if (tab[xpos][ypos] == 0){
+		if (tab[linha][coluna] == 0){
 			count++;
 		}
 		
