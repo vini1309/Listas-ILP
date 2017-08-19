@@ -1,0 +1,15 @@
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main (){
+
+	signed x, y, z;
+	scanf("%i", &x);
+	scanf("%i", &y);
+
+	z = x | y;
+
+	printf("%i", z);
+
+
+}

@@ -3,7 +3,11 @@
 using namespace std;
 int main (){
 
+<<<<<<< HEAD
+	int dim;
+=======
 	int dim, cont=0, max=0;
+>>>>>>> Modificacoes
 	cin >> dim;
 	string tab[dim];
 	cin.ignore();
@@ -15,6 +19,9 @@ int main (){
 	for (int i = 0; i < dim; i++){
 		if (i%2 == 0)
 		for (int j = 0; j < dim; j++){
+<<<<<<< HEAD
+			if tab[j]
+=======
 			if(tab[i][j] == 'o'){
 				cont++;
 			}
@@ -23,10 +30,16 @@ int main (){
 			}
 
 			if(cont > max) max = cont;
+>>>>>>> Modificacoes
 		}
 
 		else
 		for (int j = (dim-1); j >= 0; j--){
+<<<<<<< HEAD
+			cout << tab[i][j] << endl;
+		}	
+	}
+=======
 			if(tab[i][j] == 'o'){
 				cont++;
 			}
@@ -39,4 +52,5 @@ int main (){
 	}
 
 	cout << max << endl;
+>>>>>>> Modificacoes
 }
