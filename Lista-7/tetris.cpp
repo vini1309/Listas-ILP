@@ -28,28 +28,12 @@ int main(int argc, char const *argv[]){
 			player_score[i] = soma - max - min;
 
 		}
-
-		//Bubblesort do score e nome em função do nome
-		for (int fim = n_players-1; fim > 0; --fim) {
-	        for (int i = 0; i < fim; ++i) {
-	            if (player[i] > player[i+1]) {
-	                
-	                int aux = player_score[i];
-	                player_score[i] = player_score[i+1];
-	                player_score[i+1] = aux;
-
-	                string aux2 = player[i];
-	                player[i] = player[i+1];
-	                player[i+1] = aux2;
-	            }
-	        }
-	    }
 	    
 		//Bubblesort do score e nome em função do score
 		for (int fim = n_players-1; fim > 0; --fim) {
 	        for (int i = 0; i < fim; ++i) {
 	            if (player_score[i] < player_score[i+1]) {
-	                
+	       
 	                int aux = player_score[i];
 	                player_score[i] = player_score[i+1];
 	                player_score[i+1] = aux;
@@ -57,7 +41,15 @@ int main(int argc, char const *argv[]){
 	                string aux2 = player[i];
 	                player[i] = player[i+1];
 	                player[i+1] = aux2;
+
 	            }
+		        else if (player_score[i] == player_score[i+1] && 
+		        	player[i] > player[i+1]){
+		        	
+		        	string aux3 = player[i];
+	                player[i] = player[i+1];
+	                player[i+1] = aux3;
+		        }            
 
 	        }
 	    }
@@ -65,7 +57,7 @@ int main(int argc, char const *argv[]){
 	    position[0] = 1;
 	    int cont;
 		for (int i = (n_players-1); i > 0; i--){
-			cont = 0;-
+			cont = 0;
 			for(int k = i-1; k >= 0; k--){
 				if(player_score[i] < player_score[k]){
 					cont++;
