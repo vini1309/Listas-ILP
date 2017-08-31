@@ -7,7 +7,17 @@ int grau9(int n){
 
 	if(n == 9) return 1;
 	
-	
+	int alg;
+	int div = 1000;
+	int resto = n;
+	int soma = 0;
+	for (int i = 0; i < 4; i++){
+		alg = resto/div;
+		resto = resto%div;
+		div /= 10;
+		soma += alg;
+	}
+	return grau9(soma) + 1;	
 }
 
 int main (){
@@ -27,9 +37,17 @@ int main (){
 		if(soma_alg % 9 != 0){
 			cout << numero << " is not a multiple of 9." << endl;
 		}
+		else{
+			int result = grau9(soma_alg);
+			cout << numero << " is a multiple of 9 and has 9-degree " << result << ".\n";
+		}
 
-		//int result = grau9(soma_alg);
+
 	}
+
+	/*int numero;
+	cin >> numero;
+	grau9(numero);*/
 
 
 }
